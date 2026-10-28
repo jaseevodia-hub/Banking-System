@@ -1,0 +1,9 @@
+DATE/TIME | ACCOUNT | TRANSACTION TYPE     | AMOUNT | BALANCE | RESULT / MESSAGE
+2026-10-24 19:10:57 | 2001 | DEPOSIT              | M 5,000.00 | M 8,000.00 | SUCCESS: deposit accepted
+2026-10-24 19:11:35 | 2002 | WITHDRAW             | M 2,000.00 | M -1,500.00 | SUCCESS: withdrawal accepted
+2026-10-24 19:12:16 | 2002 | TRANSFER OUT         | M 3,000.00 | M -1,500.00 | FAILED: Insufficient funds: the overdraft limit is M2,000.00. Available to withdraw: M500.00 (balance M-1,500.00).
+2026-10-24 19:12:59 | 2002 | TRANSFER OUT -> 2001 | M 100.00 | M -1,600.00 | SUCCESS: money sent
+2026-10-24 19:12:59 | 2001 | TRANSFER IN <- 2002  | M 100.00 | M 8,100.00 | SUCCESS: money received
+2026-10-24 19:13:16 | 2001 | INTEREST             | M 0.00 | M 8,100.00 | NO INTEREST: current accounts earn no interest
+2026-10-24 19:13:57 | 2002 | LOAN                 | M 1,000.00 | M -600.00 | SUCCESS: loan approved and credited
+2026-10-24 19:14:17 | 2002 | INTEREST             | M 0.00 | M -600.00 | NO INTEREST: current accounts earn no interest
